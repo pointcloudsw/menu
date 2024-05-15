@@ -12,14 +12,11 @@ body { background: color(display-p3 .5 .5 .5); color: white; font: 3rem arial; }
   text-decoration: none;
 }
 
-.nav a.hamburger {
-  color: hotpink;
+.hamburger {
   margin-right: 25px;
 }
 
 ul.menu {
-  background: greenyellow;
-  color: blue;
   display: none;
   flex-direction: column;  
   gap: .8rem;
@@ -43,32 +40,33 @@ ul.menu {
 
 }
 
-/* li:has(.sub):hover > * { */
 li:hover .sub {
   display: grid;
 }
 
 .hamburger:hover ~ .menu {
-  background: violet;
+  /* background: violet; */
   display: flex;
   flex: 1 1 fit-content;
   padding: 0;
   place-content: start;
 }
 .hamburger ~ .menu:hover {
-    background: violet;
+    /* background: violet; */
     display: flex;
     flex: 1 1 fit-content;
     padding: 0;
     place-content: start;
   
 }
-
-
-.nav .menu li:hover {
-  background: lawngreen;
-  border: 2px solid red;
+.hamburger:hover
+, .hamburger:has(+ .menu:hover)
+, .nav .menu li:hover
+{
+    background: cyan;
 }
+
+
   @media screen and (min-width: 1200px){
     .nav .hamburger  {
       visibility: hidden;
