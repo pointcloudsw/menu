@@ -1,11 +1,13 @@
 body { background: color(display-p3 .5 .5 .5); color: white; font: 3rem arial; }
 /* linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red) */
-.nav {
-  display: grid;
-  grid: 1 / 1;
-  place-content: end;
-}
 
+.header {
+  display: grid;
+  grid: 1fr / 1fr 1fr;
+}
+.nav {
+  place-self: end;
+}
 .nav a {
   text-decoration: none;
 }
@@ -15,18 +17,25 @@ body { background: color(display-p3 .5 .5 .5); color: white; font: 3rem arial; }
   margin-right: 25px;
 }
 
-ul {
-  display: flex;
+ul.menu {
+  background: greenyellow;
+  color: blue;
+  display: none;
+  flex-direction: column;  
   gap: .8rem;
   list-style: none;
   margin: auto;
   padding: 0;
+  position: absolute;
+  right: -50px;
   text-align: center;
+  top: 60px;
 }
 
 .sub {
     border: none;
   display:none;
+  list-style: none;
   margin-right: 15vw;
   position: absolute; 
   /* for mobile view */
@@ -34,16 +43,9 @@ ul {
 
 }
 
-li:has(.sub):hover > * {
+/* li:has(.sub):hover > * { */
+li:hover .sub {
   display: grid;
-}
-
-.menu { display: flex; flex-direction: column; }
-ul.menu {
-  display: none;
-  position: absolute;
-  right: -50px;
-  top: 60px;
 }
 
 .hamburger:hover ~ .menu {
