@@ -2,13 +2,8 @@ body { background: color(display-p3 .5 .5 .5); color: white; font: 3rem arial; }
 /* linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red) */
 .nav {
   display: grid;
-  /* grid: repeat(2, 1fr) / repeat(4, 1fr); */
   grid: 1 / 1;
-  border: 2px solid red;
   place-content: end;
-}
-.nav * {
-  border: 2px solid green;
 }
 
 .nav a {
@@ -21,7 +16,6 @@ body { background: color(display-p3 .5 .5 .5); color: white; font: 3rem arial; }
 }
 
 ul {
-  border: .5rem solid color(display-p3 .75 .7 .99);
   display: flex;
   gap: .8rem;
   list-style: none;
@@ -29,81 +23,42 @@ ul {
   padding: 0;
   text-align: center;
 }
-li {
-  border: .3rem dashed color(display-p3 .1 .1 .9);
-}
-
-.r1 {
-  place-content: center space-evenly;
-}
-
-.r2 {
-  margin: 2rem auto auto auto;
-  place-content: center space-between;
-}
 
 .sub {
     border: none;
   display:none;
   margin-right: 15vw;
-
-  position: 
-  /* for desktop view */
-    absolute; 
+  position: absolute; 
   /* for mobile view */
 /*     relative; */
-  
-/*   transition: all 1s allow-discrete; */
-  
+
 }
 
 li:has(.sub):hover > * {
   display: grid;
-/* transition: all 1s allow-discrete;   */
 }
-/* @starting-style { */
-/*   .sub { */
-/*     display: none; */
-/*   } */
-/* } */
 
-ul li:hover {
-  background: green; 
-}
-.sub li:hover {
-  background: green; 
-  border: 2px solid red;
-    color: black;
-
-}
 .menu { display: flex; flex-direction: column; }
 ul.menu {
   display: none;
   position: absolute;
-  top: 60px;
   right: -50px;
+  top: 60px;
 }
 
-/* .nav:has(.menu) a.hamburger:hover > * { */
-    /* .nav:has(.menu):hover > * { */
 .hamburger:hover ~ .menu {
-
+  background: violet;
   display: flex;
   flex: 1 1 fit-content;
   padding: 0;
   place-content: start;
-  background: violet;
-/*   margin: 0; */
-/*   flex-direction: column; */
 }
 .hamburger ~ .menu:hover {
+    background: violet;
     display: flex;
     flex: 1 1 fit-content;
     padding: 0;
     place-content: start;
-  background: violet;
-
-    /* background: violet; */
   
 }
 
@@ -118,11 +73,9 @@ ul.menu {
     }
     
     .nav .menu  {
-    
-/*     .menu { */
       display: flex;
       flex: 1 1 fit-content;
       flex-direction: row;
-top: 20px;
+        top: 20px;
     }
   }
